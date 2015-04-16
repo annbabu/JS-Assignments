@@ -9,6 +9,9 @@
 	<script type="text/javascript">
 
 		var ary = [1, 2, 3, 4, 5, 6];
+		var ary2 = [0, 2, false, null, undefined];
+		var ary3 = [1, [2,0], [[[3, 4, 5, 6]]]];
+		var ary4 = [1, 2,[2, 3]];
 
 		var todo = [{
 			id: 101,
@@ -28,6 +31,9 @@
 			complete: false
 		}];
 
+		/**
+		*	Collections
+		*/
 
 		// Each
 		var x = _.each(ary, function(element, index, list) {
@@ -108,6 +114,41 @@
 		console.log(_.size(ary));
 
 		console.log(_.partition(todo,{name: 'Shampoo - 1'}));
+
+		/**
+		*	Array
+		*/
+
+		// first
+		var n = _.first(ary, 3);
+		console.log(n);
+
+		// initial
+		var s = _.initial(ary, 2);
+		console.log(s);
+
+		// last
+		var s = _.last(ary);
+		console.log(s);
+
+		// compact
+		var s = _.compact(ary2);
+		console.log(s);
+
+		// flatten
+		var s = _.flatten(ary3);
+		console.log(s);
+
+		var s = _.flatten(ary3,true);
+		console.log(s);
+
+		// without
+		var s = _.without(ary, 1, 6);
+		console.log(s);
+
+		// intersection
+		var s = _.intersection(ary4);
+		console.log(s);
 	</script>
 </body>
 </html>
