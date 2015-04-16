@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="underscore-min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+
+		var ary = [1, 2, 3, 4, 5, 6];
+
+		var todo = [{
+			id: 101,
+			name: 'Shampoo - 1',
+			complete: false
+		}, {
+			id: 102,
+			name: 'Vegetable cutter - 1',
+			complete: false
+		}, {
+			id: 103,
+			name: 'Candle Holder - 4',
+			complete: false
+		}, {
+			id: 104,
+			name: 'Chocolate- 2dozen',
+			complete: false
+		}];
+
+
+		// Each
+		var x = _.each(ary, function(element, index, list) {
+			console.log(element);		
+		});
+
+		var y = _.each(todo, function(value, key, list) {
+			console.log (value);
+		});
+
+		// Map
+		var z = _.map(ary, function(element) {
+			console.log(element);		
+		});
+
+		var q = _.map(todo, function(value) {
+			console.log(value.name);		
+		});
+
+
+		// Find
+		var f = _.find(todo, function(item) {
+			return item.id == 104;		
+		});
+		console.log(f);
+
+		// Where
+		console.log(_.where(todo, {id: 102, name:'Vegetable cutter - 1'}));
+
+		// Where
+		console.log(_.where(todo, {id: 102, name:'Vegetable cutter - 1'}));
+
+		// Findwhere
+		console.log(_.findWhere(todo, {complete: false}));
+
+		// Reject
+		var j = _.reject(todo, function(item) {
+			return item.id == 104;		
+		});
+		console.log(j);
+
+		// Every
+		console.log(_.every(todo, {id: 102, name:'Vegetable cutter - 1',complete: false}));
+
+		// Contains
+		console.log(_.contains(ary, 3));
+
+		// Pluck
+		var l = _.pluck(todo, 'name', function(element) {
+			return element;		
+		});
+		console.log(l);
+
+		// Max
+		var o = _.max(todo, function(element) {
+			return element.id;		
+		});
+		console.log(o);
+
+		// Min
+		var k = _.min(todo, function(element) {
+			return element.id;		
+		});
+		console.log(k);
+
+		// sortBy
+		var s = _.sortBy(todo, 'name', function(element) {
+			return element;		
+		});
+		console.log(s);
+
+		// countBy
+		var s = _.countBy(ary, function(element) {
+			console.log( element % 2 === 0);		
+		});
+
+		// size
+		console.log(_.size(ary));
+
+		console.log(_.partition(todo,{name: 'Shampoo - 1'}));
+	</script>
+</body>
+</html>
